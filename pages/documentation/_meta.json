@@ -1,0 +1,14 @@
+{
+    "installation": {
+        "title": "Installation",
+        "type": "doc"
+    },
+    "quickstart": {
+        "title": "Quickstart",
+        "type": "doc"
+    },
+    "functions": {
+        "title": "Functions",
+        "type": "doc"
+    }
+}

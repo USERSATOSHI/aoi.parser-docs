@@ -1,0 +1,55 @@
+# Quickstart
+
+Aoi.parser is a custom message parser for aoi.js' message system.
+
+## Basic Setup
+
+```js copy showLineNumbers
+const { Util } = require("aoi.js");
+const { setup } = require("aoi.parser");
+
+/*
+This will update All the parsers in aoi.js
+*/
+setup(Util);
+```
+
+## Advanced Setup
+
+```js copy showLineNumbers
+// Advanced setup where you can choose which parsers to be updated
+const { Util } = require('aoi.js');
+const { parse, createAst, parseChatInputOptions } = require('aoi.parser');
+const {
+    parseEmbed,
+    parseComponents,
+    parseFiles
+    parseExtraOptions
+} = require('aoi.parser/components');
+
+Util.parsers.ErrorHandler = parse;
+
+Util.parsers.EmbedParser = (data) => {
+    return createAst(data).children.map(parseEmbed);
+}
+
+Util.parsers.ComponentParser = (data) => {
+    return createAst(data).children.map(parseComponents);
+}
+
+Util.parsers.FileParser = (data) => {
+    return createAst(data).children.map(parseFiles);
+}
+
+Util.parsers.OptionsParser = (data) => {
+    return createAst(data).children.map(parseExtraOptions);
+}
+
+Util.parsers.SlashOptionsParser = parseChatInputOptions;
+```
+
+import { Callout } from 'nextra-theme-docs'
+
+<Callout type="info" emoji="ℹ">
+  After this, you can use the parser in your code.
+</Callout>

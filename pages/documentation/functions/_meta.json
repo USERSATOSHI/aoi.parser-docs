@@ -1,0 +1,10 @@
+{
+    "createast": {
+        "title": "Create AST",
+        "type": "doc"
+    },
+    "parse": {
+        "title": "Parse",
+        "type": "doc"
+    }
+}
