@@ -12,7 +12,7 @@ export default {
 	},
 	useNextSeoProps() {
 		return {
-			titleTemplate: "%s — aoiparser",
+			titleTemplate: "%s — aoi.parser",
 		};
 	},
 	logo: (

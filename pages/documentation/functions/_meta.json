@@ -6,5 +6,9 @@
     "parse": {
         "title": "Parse",
         "type": "doc"
+    },
+    "parseChatInputOptions": {
+        "title": "Parse Chat Input Options",
+        "type": "doc"
     }
 }

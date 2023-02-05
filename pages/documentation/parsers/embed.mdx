@@ -1,0 +1,56 @@
+# Embed
+
+* `newEmbed` creates a new embed usage
+```js copy
+{newEmbed: embed sub parsers}
+```
+
+* `title` sets the title of the embed
+```js copy
+{title: Hello World!}
+```
+
+* `description` sets the description of the embed
+```js copy
+{description: I am UserSatoshi!}
+```
+
+* `url` sets the url of the embed
+```js copy
+{url: https\\://usersatoshi.com} // Not real website
+```
+
+* `timestamp` sets the timestamp of the embed
+```js copy
+{timestamp} /** or */ {timestamp: time in ms}
+```
+
+* `color` sets the color of the embed
+```js copy
+{color: #ff0000} /** or */ {color: 0xff0000}
+```
+
+* `footer` sets the footer of the embed
+```js copy
+{footer: Hello World!: https\\://usersatoshi.com/picture.png} // Not real website icon, icon url is optional
+```
+
+* `image` sets the image of the embed
+```js copy
+{image: https\\://usersatoshi.com/picture.png} // Not real website
+```
+
+* `thumbnail` sets the thumbnail of the embed
+```js copy
+{thumbnail: https\\://usersatoshi.com/picture.png} // Not real website
+```
+
+* `author` sets the author of the embed
+```js copy
+{author: Hello World!: https\\://usersatoshi.com/picture.png} // Not real website icon, icon url is optional
+```
+
+* `field` adds a field to the embed
+```js copy
+{field: Hello World!: I am UserSatoshi!: no} // Field name and field value are required, inline is optional which is the last argument
+```

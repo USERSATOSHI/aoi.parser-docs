@@ -1,0 +1,50 @@
+# parseChatInputOptions
+
+`parseChatInputOptions` is the function to parse slash command options.
+
+### Code
+
+```js copy
+parseChatInputOptions(
+	`{string:
+        name:
+        description:
+        yes:
+        yes:
+        1:
+        200
+    }
+    {number:
+        name2:
+        description2:
+        yes:
+        yes:
+        1:
+        200
+    }`
+);
+```
+
+### Output
+
+```sh
+[
+    {
+        name: "name",
+        description: "description",
+        type: 3,
+        required: true,
+        autocomplete: true,
+        minLength: 1,
+        maxLength: 200
+    },{
+        name: "name2",
+        description: "description2",
+        type: 4,
+        required: true,
+        autocomplete: true,
+        minValues: 1,
+        maxValues: 200
+    }
+]
+    ```

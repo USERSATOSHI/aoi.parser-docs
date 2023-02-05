@@ -10,5 +10,9 @@
     "functions": {
         "title": "Functions",
         "type": "doc"
+    },
+    "parsers": {
+        "title": "Parsers",
+        "type": "doc"
     }
 }

@@ -1,0 +1,14 @@
+{
+    "embed": {
+        "title": "Embed Parser",
+        "type": "doc"
+    },
+    "component": {
+        "title": "Component Parser",
+        "type": "doc"
+    },
+    "file": {
+        "title": "File Parser",
+        "type": "doc"
+    }
+}
