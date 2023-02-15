@@ -30,7 +30,7 @@ export default {
 	footer: {
 		text: (
 			<span>
-				{new Date().getFullYear()} © USERSATOSHI. All rights reserved.
+				{new Date().getFullYear()} © USERSATOSHI & Neodevils. All rights reserved.
 			</span>
 		),
 	},
