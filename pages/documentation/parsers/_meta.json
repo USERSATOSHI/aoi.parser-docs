@@ -10,5 +10,9 @@
     "file": {
         "title": "File Parser",
         "type": "doc"
-    }
+    },
+    "options": {
+        "title": "Options",
+        "type": "doc"
+    },
 }

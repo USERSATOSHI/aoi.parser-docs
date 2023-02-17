@@ -1,0 +1,293 @@
+# Component Parser
+
+Component parser consists of 3 parts: ActionRow , Button and Menus
+
+## ActionRow
+
+ActionRow is a container for buttons and menus. It can contain up to 5 buttons and 1 menu.
+
+### Usage
+
+```js
+
+{actionRow:
+    // Button or Menu parser
+}
+```
+
+## Button
+
+Button is a clickable button. It can be used to send a message, open a link or execute a command.
+
+### Usage
+
+```js
+{
+    button: label: style: customId: disabled: emoji;
+}
+```
+
+### Properties
+
+| Property | Type             | Description     | Required |
+| :------- | :--------------- | :-------------- | :------- |
+| label    | string           | Button label    | Yes      |
+| style    | string \| number | Button style    | Yes      |
+| customId | string           | Button customId | Yes      |
+| disabled | boolean          | Button disabled | No       |
+| emoji    | string           | Button emoji    | No       |
+
+#### Button styles
+
+| Style          | Description |
+| :------------- | :---------- |
+| 1 \| primary   | Primary     |
+| 2 \| secondary | Secondary   |
+| 3 \| success   | Success     |
+| 4 \| danger    | Danger      |
+| 5 \| link      | Link        |
+
+#### Example
+
+```js
+{button:
+    click me:
+    primary:
+    click-me:
+    no:
+    ✔️
+}
+```
+
+## Menu
+
+Menu is a dropdown menu. It can be used to send a message, open a link or execute a command.
+
+import { Callout } from "nextra-theme-docs";
+
+<Callout type="info" emoji="ℹ️">
+    Menu is divided into : * stringInput * textInput * userInput * roleInput *
+    mentionableInput * channelInput
+</Callout>
+
+### StringInput
+
+StringInput is a dropdown menu with string inputs.
+
+#### Usage
+
+```js
+{stringInput:
+    customId:
+    placeholder:
+    minValues:
+    maxValues:
+    disabled:
+    {option:
+        label:
+        value:
+        description:
+        default:
+        emoji
+    }
+    {option:...}
+}
+```
+
+#### Properties
+
+| Property    | Type    | Description      | Required |
+| :---------- | :------ | :--------------- | :------- |
+| customId    | string  | Menu customId    | Yes      |
+| placeholder | string  | Menu placeholder | Yes      |
+| minValues   | number  | Menu minValues   | Yes      |
+| maxValues   | number  | Menu maxValues   | Yes      |
+| disabled    | boolean | Menu disabled    | No       |
+| option      | string  | Menu option      | Yes      |
+
+#### Option properties
+
+| Property    | Type    | Description        | Required |
+| :---------- | :------ | :----------------- | :------- |
+| label       | string  | Option label       | Yes      |
+| value       | string  | Option value       | Yes      |
+| description | string  | Option description | No       |
+| default     | boolean | Option default     | No       |
+| emoji       | string  | Option emoji       | No       |
+
+#### Example
+
+```js
+{stringInput:
+    string-input:
+    Select a string:
+    1:
+    1:
+    no:
+    {option:
+        Option 1:
+        option-1:
+        Option 1 description:
+        no:
+        ✔️
+    }
+    {option:
+        Option 2:
+        option-2:
+        Option 2 description:
+        no:
+        ❌
+    }
+}
+```
+
+### TextInput
+
+TextInput is a dropdown menu with text inputs.
+
+#### Usage
+
+```js
+{
+    textInput: label: style: customId: placeholder: required: value: minLength: maxLength;
+}
+```
+
+#### Properties
+
+| Property    | Type             | Description      | Required |
+| :---------- | :--------------- | :--------------- | :------- |
+| label       | string           | Menu label       | Yes      |
+| style       | string \| number | Menu style       | Yes      |
+| customId    | string           | Menu customId    | Yes      |
+| placeholder | string           | Menu placeholder | No       |
+| required    | boolean          | Menu required    | No       |
+| value       | string           | Menu value       | No       |
+| minLength   | number           | Menu minLength   | No       |
+| maxLength   | number           | Menu maxLength   | No       |
+
+#### TextInput styles
+
+| Style          | Description |
+| :------------- | :---------- |
+| 1 \| short     | Short       |
+| 2 \| paragraph | Long        |
+
+#### Example
+
+```js
+{textInput:
+    text-input:
+    short:
+    text-input:
+    Enter a text:
+    no:
+    no:
+    1:
+    100
+}
+```
+
+### UserInput & MentionableInput & RoleInput
+
+UserInput, MentionableInput and RoleInput are dropdown menus with user, mentionable and role inputs.
+
+#### Usage
+
+```js
+{
+    stringInput: customId: placeholder: minValues: maxValues: disabled;
+}
+
+// same for mentionableInput and roleInput
+```
+
+#### Properties
+
+| Property    | Type    | Description      | Required |
+| :---------- | :------ | :--------------- | :------- |
+| customId    | string  | Menu customId    | Yes      |
+| placeholder | string  | Menu placeholder | Yes      |
+| minValues   | number  | Menu minValues   | Yes      |
+| maxValues   | number  | Menu maxValues   | Yes      |
+| disabled    | boolean | Menu disabled    | No       |
+
+#### Example
+
+```js
+{userInput:
+    user-input:
+    Select a user:
+    1:
+    1:
+    no
+}
+
+// same for mentionableInput and roleInput
+```
+
+### ChannelInput
+
+ChannelInput is a dropdown menu with channel inputs.
+
+#### Usage
+
+```js
+{channelInput:
+    customId:
+    placeholder:
+    minValues:
+    maxValues:
+    disabled:
+    {channelType:
+        CHANNEL_TYPE
+    }
+    {channelType:...}
+}
+```
+
+#### Properties
+
+| Property    | Type             | Description      | Required |
+| :---------- | :--------------- | :--------------- | :------- |
+| customId    | string           | Menu customId    | Yes      |
+| placeholder | string           | Menu placeholder | Yes      |
+| minValues   | number           | Menu minValues   | Yes      |
+| maxValues   | number           | Menu maxValues   | Yes      |
+| disabled    | boolean          | Menu disabled    | No       |
+| channelType | string \| number | Menu channelType | No       |
+
+#### ChannelInput channelTypes
+
+| ChannelType                                 | Description          |
+| :------------------------------------------ | :------------------- |
+| 0 \| text \| GUILD_TEXT                     | Guild Text           |
+| 1 \| dm \| DM                               | DM                   |
+| 2 \| voice \| GUILD_VOICE                   | Guild Voice          |
+| 3 \| group \| GROUP_DM                      | Group DM             |
+| 4 \| category \| GUILD_CATEGORY             | Guild Category       |
+| 5 \| news \| GUILD_NEWS                     | Guild News           |
+| 10 \| newsThread \| GUILD_NEWS_THREAD       | Guild News Thread    |
+| 11 \| publicThread \| GUILD_PUBLIC_THREAD   | Guild Public Thread  |
+| 12 \| privateThread \| GUILD_PRIVATE_THREAD | Guild Private Thread |
+| 13 \| stage \| GUILD_STAGE_VOICE            | Guild Stage Voice    |
+| 14 \| directory \| GUILD_DIRECTORY          | Guild Directory      |
+| 15 \| forum \| GUILD_FORUM                  | Guild Forum          |
+
+#### Example
+
+```js
+{channelInput:
+    channel-input:
+    Select a channel:
+    1:
+    1:
+    no:
+    {channelType:
+        GUILD_TEXT
+    }
+    {channelType:
+        GUILD_VOICE
+    }
+}
+```

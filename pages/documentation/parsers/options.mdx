@@ -1,0 +1,107 @@
+# Options Parser
+
+Options parser consists of 5 parts: TTS, AllowedMentions, FetchReply, Reply, Ephemeral
+
+## TTS
+
+tts sets the messagePayload to be a text-to-speech message.
+
+### Usage
+
+```js
+{tts}
+```
+
+## AllowedMentions
+
+allowedMentions sets the allowedMentions for the messagePayload.
+
+### Usage
+
+```js
+{allowedMentions:
+    {parse:
+        // Parse Options
+    }
+    {users:
+        // User IDs
+    }
+    {roles:
+        // Role IDs
+    }
+}
+```
+
+### Properties
+
+| Property | Type   | Description | Required |
+| :------- | :----- | :---------- | :------- |
+| parse    | array  | Parse options | No       |
+| users    | array  | User IDs      | No       |
+| roles    | array  | Role IDs      | No       |
+
+#### Parse Options
+
+| Option | Description |
+| :----- | :---------- |
+| users  | Parse user mentions |
+| roles  | Parse role mentions |
+| everyone | Parse everyone mentions |
+
+#### Example
+
+```js
+{allowedMentions:
+    {parse:
+        users:
+        roles
+    }
+}
+```
+
+## Reply
+
+reply sets the messagePayload to be a reply to the message that triggered the command.
+
+### Usage
+
+```js
+{reply:
+    messageId
+}
+```
+
+### Properties
+
+| Property | Type   | Description | Required |
+| :------- | :----- | :---------- | :------- |
+| messageId | string | Message ID | Yes |
+
+#### Example
+
+```js
+{reply:
+    123456789012345678
+}
+```
+
+## Ephemeral
+
+ephemeral sets the messagePayload to be ephemeral.
+
+### Usage
+
+```js
+{ephemeral}
+```
+
+## FetchReply
+
+fetchReply fetches the interaction response sent by the bot.
+
+### Usage
+
+```js
+{fetchReply}
+```
+
