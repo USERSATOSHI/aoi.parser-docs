@@ -1,12 +1,12 @@
 export default {
 	banner: {
-		key: "v1.2.0",
+		key: "v1.2.3",
 		text: (
 			<a
-				href="https://github.com/USERSATOSHI/parsers/releases/tag/v1.2.0"
+				href="https://github.com/USERSATOSHI/parsers/releases/tag/v1.2.3"
 				target="_blank"
 			>
-				🎉 aoi.parser v1.2.0 is released. Read more →
+				🎉 aoi.parser v1.2.3 is released. Read more →
 			</a>
 		),
 	},
