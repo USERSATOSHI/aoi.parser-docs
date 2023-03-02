@@ -3,10 +3,10 @@ export default {
 		key: "v1.2.3",
 		text: (
 			<a
-				href="https://github.com/USERSATOSHI/parsers/releases/tag/v1.2.3"
+				href="https://github.com/USERSATOSHI/parsers/releases/tag/v1.2.4"
 				target="_blank"
 			>
-				🎉 aoi.parser v1.2.3 is released. Read more →
+				🎉 aoi.parser v1.2.4 is released. Read more →
 			</a>
 		),
 	},
